@@ -1,0 +1,243 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+}
+
+header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+header h1 {
+    font-size: 2.5em;
+    font-weight: 300;
+}
+
+.search-section {
+    padding: 30px;
+    display: flex;
+    gap: 10px;
+}
+
+#cityInput {
+    flex: 1;
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+#cityInput:focus {
+    border-color: #667eea;
+}
+
+#searchBtn {
+    padding: 15px 25px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#searchBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.weather-info {
+    padding: 0 30px 30px;
+}
+
+.current-weather {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    border-radius: 15px;
+    color: white;
+}
+
+.weather-main {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.temperature {
+    font-size: 4em;
+    font-weight: bold;
+}
+
+.weather-icon img {
+    width: 100px;
+    height: 100px;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+.weather-details h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.weather-details p {
+    font-size: 1.1em;
+    opacity: 0.9;
+    margin-bottom: 5px;
+}
+
+.weather-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.stat {
+    background: #f8f9ff;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 4px solid #667eea;
+}
+
+.stat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.stat-icon {
+    font-size: 1.2em;
+}
+
+.stat .label {
+    color: #666;
+    font-weight: 500;
+    flex: 1;
+    margin-left: 10px;
+}
+
+.stat-header span:last-child {
+    font-weight: bold;
+    color: #333;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background-color: #e0e6ed;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-fill {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.8s ease-in-out, background-color 0.3s ease;
+    position: relative;
+}
+
+/* 각 항목별 색상 */
+#feelsLikeProgress {
+    background: linear-gradient(90deg, #74b9ff, #0984e3);
+}
+
+#humidityProgress {
+    background: linear-gradient(90deg, #55a3ff, #003d82);
+}
+
+#windSpeedProgress {
+    background: linear-gradient(90deg, #a8e6cf, #3d9970);
+}
+
+#visibilityProgress {
+    background: linear-gradient(90deg, #ffd93d, #ff6b35);
+}
+
+#pressureProgress {
+    background: linear-gradient(90deg, #ff7675, #d63031);
+}
+
+#uvIndexProgress {
+    background: linear-gradient(90deg, #fdcb6e, #e17055);
+}
+
+.error-message,
+.loading {
+    text-align: center;
+    padding: 30px;
+    color: #666;
+}
+
+.error-message {
+    color: #e74c3c;
+    background: #ffe6e6;
+    margin: 0 30px 30px;
+    border-radius: 10px;
+}
+
+.loading {
+    color: #667eea;
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin: 10px;
+        border-radius: 15px;
+    }
+    
+    .search-section {
+        flex-direction: column;
+        padding: 20px;
+    }
+    
+    .current-weather {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .weather-main {
+        flex-direction: column;
+    }
+    
+    .temperature {
+        font-size: 3em;
+    }
+    
+    .weather-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    header h1 {
+        font-size: 2em;
+    }
+}
